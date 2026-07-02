@@ -1,4 +1,4 @@
-# Redrob Hackathon — Team OffGridDev
+# Redrob Hackathon  Team OffGridDev
 
 Embedding-based semantic ranker with rule-based disqualifiers for the
 Intelligent Candidate Discovery & Ranking Challenge.
