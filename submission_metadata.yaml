@@ -1,0 +1,72 @@
+# Redrob Hackathon — Submission Metadata
+
+team_name: "OffGridDev"
+
+primary_contact:
+  name: "Madhav Sharma"
+  email: "mishra.madhav3121@gmail.com"
+  phone: "+91-6396343100"
+
+team_members:
+  - name: "Madhav Sharma"
+    email: "mishra.madhav3121@gmail.com"
+    role: "ML Engineer"
+  - name: "Om Pandey"
+    email: "omxpandey@gmail.com"
+    role: "Data Engineer"
+
+github_repo: "https://github.com/Maddybuilds/India-runs-hackathon"
+
+sandbox_link: "https://huggingface.co/spaces/Maddy3121/redrob-ranker"
+
+reproduce_command: "python rank.py --candidates ./data/candidates.jsonl --out ./submission/submission.csv"
+
+compute:
+  platform: "Windows 11 Home, 16-core CPU"
+  cpu_cores: 16
+  ram_gb: 16
+  python_version: "3.14.6"
+  os: "Windows 11 Home Single Language"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 1
+
+ai_tools_used:
+  - "OpenCode (MiMo V2.5 Free / OpenCode Zen)"
+  - "Claude (Anthropic)"
+
+ai_usage_summary: |
+  OpenCode (agentic coding tool, model MiMo V2.5 Free / OpenCode Zen) was used for
+  implementation throughout the project — every code change was specified, reviewed,
+  and verified against real data before being accepted. Claude (Anthropic) was used for
+  architecture review, prompt-writing, code audit, and catching real bugs (e.g. a
+  no-op fact-check, a missing consulting-company substring match, a sparse
+  description-keyword signal) before they shipped. No candidate data was fed to any
+  LLM. All scoring logic, weights, and keyword lists were written and tuned by the
+  team with AI assistance as a development tool, not as an autonomous author.
+
+methodology_summary: |
+  Embedding-based semantic ranker with rule-based disqualifiers. Precompute phase
+  builds TF-IDF + SVD representations of all 100K candidates offline, then computes
+  cosine similarity to the job description as the primary signal (35% weight). Title
+  engineering signal (25%) uses embedding similarity to reference title groups
+  (strong-AI, general engineering, non-tech) blended with description-keyword
+  matching. Skill quality score (15%) weights JD-relevant skills by proficiency,
+  duration, and endorsements. Experience band fit (15%) penalizes deviation from
+  the 5-9 year sweet spot. Location fit (10%) favors Tier-1 India cities.
+  Multiplicative modifiers: behavioral signals (open-to-work, recruiter response,
+  activity recency), consulting-only penalty (0.6x for sole consulting history),
+  AI recency trap penalty (0.5x for pure AI-hoppers without engineering backbone).
+  Honeypots (advanced skill with <=2 months, career duration anomalies, date
+  inconsistencies) are filtered out entirely. Deterministic grounded reasoning
+  generation uses template-based construction from verified candidate facts — zero
+  LLM calls in the scoring or reasoning path. Total rank.py runtime: under 0.1s
+  on CPU.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

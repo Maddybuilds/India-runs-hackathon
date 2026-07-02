@@ -1,0 +1,5 @@
+data/candidates.jsonl
+data/job_description.docx
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,5 @@
+Copy these files from the original hackathon bundle into this folder: 
+  candidates.jsonl 
+  sample_candidates.json 
+  candidate_schema.json 
+  job_description.md - a plain text copy of job_description.docx 
