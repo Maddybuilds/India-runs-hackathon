@@ -5,13 +5,9 @@ Intelligent Candidate Discovery & Ranking Challenge.
 
 ## Demo / Showcase
 
-https://github.com/Maddybuilds/India-runs-hackathon/assets/demo-showcase.mp4
-
 > **How it works:** Watch the full walkthrough — from data ingestion to ranked candidates with reasoning.
 
-<details>
-<summary>Alternatively, <a href="demo-showcase.mp4">download the video directly</a></summary>
-</details>
+[▶ Watch the demo video](demo-showcase.mp4)
 
 ## Setup
 
