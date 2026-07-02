@@ -5,7 +5,7 @@ Intelligent Candidate Discovery & Ranking Challenge.
 
 ## Demo / Showcase
 
-> **How it works:** Watch the full walkthrough — from data ingestion to ranked candidates with reasoning.
+> **How it works:** Watch the full walkthrough from data ingestion to ranked candidates with reasoning.
 
 [▶ Watch the demo video](demo-showcase.mp4)
 
